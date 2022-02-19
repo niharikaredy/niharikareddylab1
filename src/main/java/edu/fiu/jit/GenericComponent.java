@@ -2,6 +2,8 @@ package edu.fiu.jit;
 
 import java.util.List;
 
+import com.niharika.lab3.installprocess;
+
 /**
  * A simple interface showing how to use the Self-check process.
  * A component is something that is self-check capable, and also
@@ -19,12 +21,10 @@ import java.util.List;
  *
  */
 public interface GenericComponent extends SelfCheckCapable {
+	installprocess internalComponents = new installprocess(); // create an empty list
+	Collections.addAll(internalComponents, user, server, sftapplication, controlpanel);
 
-	/**
-	 * Return all the self-check capable subcomponents in your Component as a list
-	 * These will get checked as part of the self-check process.
-	 * @return all subcomponets as a List
-	 */
+	
 	public List<SelfCheckCapable> getSubComponents();
 
 }

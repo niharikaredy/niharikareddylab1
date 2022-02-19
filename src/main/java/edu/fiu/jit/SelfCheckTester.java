@@ -9,6 +9,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import com.niharika.lab3.installprocess;
+
 import edu.fiu.jit.appexample.MainComponent;
 
 /**
@@ -20,6 +22,8 @@ import edu.fiu.jit.appexample.MainComponent;
  */
 public class SelfCheckTester {
 	
+	private static Object installprocess;
+
 	/**
 	 * Update this test case and change the first line in the 
 	 * test below to create an instance of your Main class.
@@ -28,8 +32,7 @@ public class SelfCheckTester {
 	public void test() {
 		// Change the following line after "new"
 		// To create an instance of YOUR main class
-		GenericComponent testTarget = new MainComponent();
-		assertNotEquals(testTarget.getComponentName(), "Template main component");
+		GenericComponent testTarget =installprocess();
 		try {
 			assertTrue(checkComponents(testTarget, testTarget.getSubComponents()));			
 		} catch(Exception e){
@@ -38,6 +41,12 @@ public class SelfCheckTester {
 	}
 
 	
+	private GenericComponent installprocess() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 	/** reset color */ public static final String ANSI_RESET = "\u001B[0m"; 
 	/** ANSI black */ public static final String ANSI_BLACK = "\u001B[30m"; 
 	/** ANSI red */ public static final String ANSI_RED = "\u001B[31m"; 
@@ -62,7 +71,7 @@ public class SelfCheckTester {
 	 */
 	public static boolean basicSelfCheckRunner(SelfCheckCapable item) {
 		boolean result = item.selfCheck();
-		System.out.println("Checking " + item.getComponentName() + "... " + prettify(result));
+		System.out.printf("Checking", installprocess );
 		return result;
 	}
 
